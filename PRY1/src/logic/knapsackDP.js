@@ -1,7 +1,9 @@
+import { INPUT_LIMITS } from '../configuracion/config.js';
 import { reconstructSolution } from './reconstructSolution.js';
 import {
   calculateOccupancy,
   calculateTotalWeight,
+  countDPStates,
   measureExecutionTime,
 } from './metrics.js';
 
@@ -19,10 +21,28 @@ function assertValidInput(orders, capacity) {
       throw new RangeError(`El pedido en la posición ${index} tiene un peso inválido.`);
     }
 
-    if (!Number.isFinite(order.profit) || order.profit < 0) {
+    if (!Number.isFinite(order.profit) || order.profit <= 0) {
       throw new RangeError(`El pedido en la posición ${index} tiene una ganancia inválida.`);
     }
   });
+}
+
+function assertWithinDPLimits(orderCount, capacity) {
+  if (capacity > INPUT_LIMITS.maxCapacity) {
+    throw new RangeError(`La capacidad no puede superar ${INPUT_LIMITS.maxCapacity}.`);
+  }
+
+  if (orderCount > INPUT_LIMITS.maxOrders) {
+    throw new RangeError(`No se pueden procesar más de ${INPUT_LIMITS.maxOrders} pedidos.`);
+  }
+
+  const states = countDPStates(orderCount, capacity);
+
+  if (states > INPUT_LIMITS.maxDPStates) {
+    throw new RangeError(
+      `La tabla DP requiere ${states} estados y el máximo permitido es ${INPUT_LIMITS.maxDPStates}.`,
+    );
+  }
 }
 
 /**
@@ -32,6 +52,8 @@ function assertValidInput(orders, capacity) {
  * Cada fila es un Float64Array: memoria contigua y predecible (8 bytes por estado).
  */
 export function buildDPTable(orders, capacity) {
+  assertWithinDPLimits(orders.length, capacity);
+
   const dpTable = [new Float64Array(capacity + 1)];
   let statesExplored = 0;
 

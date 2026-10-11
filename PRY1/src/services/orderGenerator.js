@@ -1,4 +1,4 @@
-import { RANDOM_GENERATOR_DEFAULTS } from '../constants/config.js';
+import { RANDOM_GENERATOR_DEFAULTS } from '../configuracion/config.js';
 
 let idSequence = 0;
 
@@ -42,8 +42,16 @@ export function generateRandomOrders(count, options = {}) {
     throw new RangeError('La cantidad de pedidos debe ser un entero mayor o igual a 0.');
   }
 
-  if (minWeight < 1 || minWeight > maxWeight || minProfit < 1 || minProfit > maxProfit) {
-    throw new RangeError('Los rangos de peso y ganancia deben ser positivos y estar ordenados.');
+  if (
+    ![minWeight, maxWeight, minProfit, maxProfit].every(Number.isInteger) ||
+    minWeight < 1 ||
+    minWeight > maxWeight ||
+    minProfit < 1 ||
+    minProfit > maxProfit
+  ) {
+    throw new RangeError(
+      'Los rangos de peso y ganancia deben ser enteros positivos y estar ordenados.',
+    );
   }
 
   return Array.from({ length: count }, (_, offset) =>
