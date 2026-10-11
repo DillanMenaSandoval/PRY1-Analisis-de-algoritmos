@@ -11,11 +11,14 @@ function OrderForm() {
       description="Ingresa los datos de un pedido de entrega."
       badge={PENDING_BADGE}
     >
-      <FormField label="Nombre" placeholder="Ej. Pedido Centro" />
+      <FormField label="Nombre del pedido" placeholder="Ej. Pedido Centro" />
       <div className="order-form__grid">
         <FormField label="Peso" unit="kg" type="number" min="1" placeholder="0" />
         <FormField label="Ganancia" unit="$" type="number" min="0" placeholder="0" />
-        <FormField label="Distancia" unit="km" type="number" min="0" placeholder="0" />
+      </div>
+      <div className="order-form__grid">
+        <FormField label="Coordenada X" type="number" placeholder="0" />
+        <FormField label="Coordenada Y" type="number" placeholder="0" />
       </div>
       <div className="order-form__actions">
         <Button disabled title={PENDING_FEATURE}>
