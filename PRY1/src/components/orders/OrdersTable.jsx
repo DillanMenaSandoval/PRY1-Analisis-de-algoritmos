@@ -7,7 +7,8 @@ const COLUMNS = [
   { key: 'name', label: 'Nombre' },
   { key: 'weight', label: 'Peso (kg)', numeric: true },
   { key: 'profit', label: 'Ganancia ($)', numeric: true },
-  { key: 'distance', label: 'Distancia (km)', numeric: true },
+  { key: 'x', label: 'Coordenada X', numeric: true },
+  { key: 'y', label: 'Coordenada Y', numeric: true },
 ]
 
 function OrdersTable({ orders = [] }) {
