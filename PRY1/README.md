@@ -1,16 +1,30 @@
-# React + Vite
+# Ruteo y Planificación de Cargas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto 1 del curso Análisis de Algoritmos. Sistema para administrar pedidos de entrega, configurar la capacidad de un vehículo y seleccionar los pedidos más convenientes mediante un algoritmo de optimización.
 
-Currently, two official plugins are available:
+## Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React + JavaScript
+- Vite
+- CSS
 
-## React Compiler
+## Ejecución local
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+cd PRY1
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Scripts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Comando           | Descripción                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Servidor de desarrollo               |
+| `npm run build`   | Compilación de producción en `dist/` |
+| `npm run preview` | Vista previa de la compilación       |
+| `npm run lint`    | Análisis estático con ESLint         |
+
+## Estado
+
+Etapa 1: interfaz gráfica básica. Los botones están deshabilitados hasta que se implemente la lógica en etapas posteriores.

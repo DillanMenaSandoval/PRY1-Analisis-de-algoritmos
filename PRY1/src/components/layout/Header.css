@@ -1,0 +1,32 @@
+.header {
+  background: linear-gradient(135deg, #172554 0%, var(--color-primary) 100%);
+  color: #ffffff;
+  border-bottom: 4px solid var(--color-accent);
+}
+
+.header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px 28px;
+}
+
+.header__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #bfdbfe;
+}
+
+.header__title {
+  margin-top: 6px;
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.header__description {
+  margin-top: 10px;
+  max-width: 680px;
+  color: #dbeafe;
+}

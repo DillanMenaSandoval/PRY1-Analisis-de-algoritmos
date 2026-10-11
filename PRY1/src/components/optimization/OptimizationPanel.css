@@ -1,0 +1,19 @@
+.optimization-panel__results {
+  min-height: 140px;
+}
+
+.optimization-panel__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.optimization-panel__actions .button {
+  width: auto;
+  min-width: 220px;
+}
+
+@media (max-width: 560px) {
+  .optimization-panel__actions .button {
+    width: 100%;
+  }
+}
