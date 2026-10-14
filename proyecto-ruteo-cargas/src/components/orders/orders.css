@@ -1,0 +1,123 @@
+.order-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.order-form__name,
+.order-form__submit,
+.order-form__limit {
+  grid-column: 1 / -1;
+}
+
+.random-generator {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.random-generator__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.random-generator__actions .button {
+  flex: 1 1 140px;
+}
+
+.order-list__summary {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-height: 560px;
+  margin: 0;
+  padding: 0 var(--space-1) 0 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.order-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.order-card--selected {
+  background: var(--color-success-soft);
+  border-color: color-mix(in srgb, var(--color-success) 45%, transparent);
+}
+
+.order-card__position {
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  height: 32px;
+  padding-inline: var(--space-1);
+  border-radius: 999px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.order-card__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.order-card__meta {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.order-card__stats {
+  display: flex;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.order-card__stats dt {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.order-card__stats dd {
+  margin: 0;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 560px) {
+  .order-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .order-card__stats {
+    grid-column: 2;
+  }
+
+  .order-card__remove {
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+}
