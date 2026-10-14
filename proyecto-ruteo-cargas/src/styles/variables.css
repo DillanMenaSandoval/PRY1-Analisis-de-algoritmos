@@ -1,0 +1,83 @@
+:root {
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Consolas, monospace;
+
+  --color-bg: #f4f6fa;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-border: #dde3ec;
+  --color-border-strong: #c3ccd9;
+  --color-text: #172033;
+  --color-text-muted: #5b6678;
+
+  --color-primary: #1d4ed8;
+  --color-primary-hover: #1e40af;
+  --color-primary-soft: #e3ebfd;
+  --color-on-primary: #ffffff;
+
+  --color-success: #15803d;
+  --color-success-soft: #dcf5e4;
+  --color-warning: #a15c07;
+  --color-warning-soft: #fdf1d8;
+  --color-danger: #b91c1c;
+  --color-danger-soft: #fde4e4;
+
+  --dp-header-bg: #e8edf5;
+  --dp-cell-bg: #ffffff;
+  --dp-taken-bg: #bbf0cc;
+  --dp-skipped-bg: #fbe9c0;
+  --dp-dependency-outline: #7c3aed;
+  --dp-final-outline: #1d4ed8;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 6%), 0 2px 8px rgb(15 23 42 / 5%);
+  --focus-ring: 0 0 0 3px rgb(29 78 216 / 35%);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0e141f;
+    --color-surface: #161e2c;
+    --color-surface-muted: #1b2536;
+    --color-border: #2a3649;
+    --color-border-strong: #3a4860;
+    --color-text: #e6ebf3;
+    --color-text-muted: #9aa6ba;
+
+    --color-primary: #6b95f7;
+    --color-primary-hover: #8aacf9;
+    --color-primary-soft: #1d2c4d;
+    --color-on-primary: #0b1220;
+
+    --color-success: #4ade80;
+    --color-success-soft: #143324;
+    --color-warning: #f4b545;
+    --color-warning-soft: #3a2b10;
+    --color-danger: #f87171;
+    --color-danger-soft: #3d1717;
+
+    --dp-header-bg: #212c3f;
+    --dp-cell-bg: #161e2c;
+    --dp-taken-bg: #1c5a35;
+    --dp-skipped-bg: #5a4415;
+    --dp-dependency-outline: #b794f6;
+    --dp-final-outline: #6b95f7;
+
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 30%);
+    --focus-ring: 0 0 0 3px rgb(107 149 247 / 45%);
+
+    color-scheme: dark;
+  }
+}

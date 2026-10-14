@@ -1,0 +1,34 @@
+.execution-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.execution-controls__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-5);
+}
+
+.execution-controls__status {
+  color: var(--color-text-muted);
+}
+
+.execution-controls__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+@media (max-width: 560px) {
+  .execution-controls__buttons {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .execution-controls__buttons .button {
+    width: 100%;
+  }
+}

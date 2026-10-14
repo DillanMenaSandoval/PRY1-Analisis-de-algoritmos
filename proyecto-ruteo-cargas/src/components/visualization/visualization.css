@@ -1,0 +1,328 @@
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.data-table thead th {
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.data-table tbody tr:last-child > * {
+  border-bottom: none;
+}
+
+.data-table tbody th {
+  font-weight: 600;
+}
+
+.selected-orders__scroll {
+  max-height: 360px;
+  overflow: auto;
+}
+
+.selected-orders__scroll thead th {
+  position: sticky;
+  top: 0;
+}
+
+.data-table__numeric {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tabla de Programación Dinámica */
+.dp-visualization {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.dp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.dp-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dp-legend__swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid var(--color-border-strong);
+}
+
+.dp-legend__swatch--taken {
+  background: var(--dp-taken-bg);
+}
+
+.dp-legend__swatch--skipped {
+  background: var(--dp-skipped-bg);
+}
+
+.dp-legend__swatch--dependency {
+  background: var(--dp-cell-bg);
+  border: 2px dashed var(--dp-dependency-outline);
+}
+
+.dp-legend__swatch--final {
+  background: var(--dp-cell-bg);
+  border: 2px solid var(--dp-final-outline);
+}
+
+.dp-pagers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+}
+
+.dp-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  font-size: 0.85rem;
+}
+
+.dp-pager__label {
+  font-variant-numeric: tabular-nums;
+}
+
+.dp-pager__buttons {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.dp-table__scroll {
+  max-height: 560px;
+  overflow: auto;
+}
+
+.dp-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.dp-table th,
+.dp-table td {
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dp-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 6px 8px;
+  background: var(--dp-header-bg);
+  font-weight: 700;
+  text-align: center;
+}
+
+.dp-table__corner {
+  left: 0;
+  z-index: 3 !important;
+  color: var(--color-text-muted);
+}
+
+.dp-table__row-header {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  max-width: 190px;
+  min-width: 140px;
+  padding: 4px 10px;
+  overflow: hidden;
+  background: var(--dp-header-bg);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dp-table__row-index {
+  display: inline-block;
+  min-width: 2ch;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+}
+
+.dp-table__row-meta {
+  display: block;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.dp-cell {
+  padding: 0;
+  background: var(--dp-cell-bg);
+}
+
+.dp-cell__button {
+  display: block;
+  width: 100%;
+  min-width: 42px;
+  padding: 8px 6px;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dp-cell__button:hover {
+  background: var(--color-primary-soft);
+}
+
+.dp-cell--taken {
+  background: var(--dp-taken-bg);
+  font-weight: 700;
+}
+
+.dp-cell--skipped {
+  background: var(--dp-skipped-bg);
+}
+
+.dp-cell--dependency .dp-cell__button {
+  outline: 2px dashed var(--dp-dependency-outline);
+  outline-offset: -3px;
+}
+
+.dp-cell--final .dp-cell__button {
+  outline: 2px solid var(--dp-final-outline);
+  outline-offset: -3px;
+  font-weight: 800;
+}
+
+.dp-cell--selected .dp-cell__button {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.dp-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+}
+
+.dp-details__text {
+  display: flex;
+  flex: 1 1 320px;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dp-details__formula {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+/* Visualización paso a paso */
+.dp-playback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.dp-playback__buttons,
+.dp-playback__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+}
+
+.dp-playback__option {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+}
+
+.dp-playback__select {
+  width: auto;
+  min-width: 0;
+  padding: 4px 8px;
+}
+
+.dp-playback__status {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  gap: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.dp-playback__status p {
+  margin: 0;
+}
+
+.dp-playback__progress {
+  width: 100%;
+  height: 8px;
+  accent-color: var(--color-primary);
+}
+
+.dp-cell--pending {
+  background: var(--color-surface-muted);
+}
+
+.dp-cell--pending .dp-cell__button {
+  color: var(--color-text-muted);
+  cursor: default;
+}
+
+.dp-cell--pending .dp-cell__button:hover {
+  background: transparent;
+}

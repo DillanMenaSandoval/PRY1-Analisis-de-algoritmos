@@ -1,0 +1,26 @@
+{
+  "name": "proyecto-ruteo-cargas",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Planificación de cargas mediante Programación Dinámica (Mochila 0/1) con React.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^5.4.21",
+    "vitest": "^2.1.9"
+  },
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  }
+}
