@@ -18,6 +18,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: proyecto-ruteo-cargas
     steps:
       - uses: actions/checkout@v4
 
@@ -25,6 +28,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: proyecto-ruteo-cargas/package-lock.json
 
       - run: npm ci
       - run: npm test
@@ -38,7 +42,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: proyecto-ruteo-cargas/dist/
 
   deploy:
     needs: build
